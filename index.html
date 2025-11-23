@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>2050：大协同时代</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              // Updated to Cold Tones (Slate/Blue/Teal/Ice)
+              'cyber-black': '#020617', // Very dark slate/blue
+              'cyber-dark': '#0F172A',  // Slate 900
+              'cyber-gray': '#1E293B',  // Slate 800
+              'neon-red': '#3B82F6',    // Replaced Red with Electric Blue (Warning/Action)
+              'neon-cyan': '#A5F3FC',   // Replaced Cyan with Ice Blue
+              'neon-green': '#2DD4BF',  // Replaced Green with Cold Teal
+            },
+            fontFamily: {
+              sans: ['Rajdhani', 'sans-serif'],
+              display: ['Orbitron', 'sans-serif'],
+              mono: ['Roboto Mono', 'monospace'],
+            },
+            animation: {
+              'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'glitch': 'glitch 1s linear infinite',
+              'scanline': 'scanline 8s linear infinite',
+              'crt-flicker': 'flicker 0.15s infinite',
+              'shake': 'shake 0.2s cubic-bezier(.36,.07,.19,.97) both infinite',
+            },
+            keyframes: {
+              shake: {
+                '10%, 90%': { transform: 'translate3d(-1px, 0, 0) rotate(1deg)' },
+                '20%, 80%': { transform: 'translate3d(2px, 0, 0) rotate(-1deg)' },
+                '30%, 50%, 70%': { transform: 'translate3d(-4px, 0, 0) rotate(2deg)' },
+                '40%, 60%': { transform: 'translate3d(4px, 0, 0) rotate(-2deg)' }
+              },
+              glitch: {
+                '2%, 64%': { transform: 'translate(2px,0) skew(0deg)' },
+                '4%, 60%': { transform: 'translate(-2px,0) skew(0deg)' },
+                '62%': { transform: 'translate(0,0) skew(5deg)' },
+              },
+              scanline: {
+                '0%': { transform: 'translateY(-100%)' },
+                '100%': { transform: 'translateY(100%)' }
+              },
+              flicker: {
+                '0%, 100%': { opacity: '1' },
+                '50%': { opacity: '0.97' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Import Map for ESM React -->
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/jsx-runtime": "https://aistudiocdn.com/react@^19.2.0/jsx-runtime",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+
+    <!-- Babel Standalone (Only needed if environment relies on client-side compilation) -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+      body {
+        background-color: #020617; /* Deep Cold Blue/Black */
+        color: #e5e5e5;
+        overflow-x: hidden;
+        cursor: crosshair;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0F172A; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #334155; 
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #3B82F6; 
+      }
+      .glitch-layer {
+        mix-blend-mode: exclusion;
+      }
+      
+      /* Background Animation Styles */
+      .bg-grid-pattern {
+        background-image: linear-gradient(rgba(165, 243, 252, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(165, 243, 252, 0.05) 1px, transparent 1px);
+        background-size: 30px 30px;
+      }
+    </style>
+</head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      // This script block is here to ensure Babel handles the execution context if needed.
+    </script>
+    <script type="module" src="./index.tsx"></script>
+  </body>
+</html>
